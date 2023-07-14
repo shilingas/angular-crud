@@ -1,1 +1,1 @@
-Angular + Firebase CRUD APP
+Angular(TypeScript) + Firebase CRUD APP
