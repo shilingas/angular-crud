@@ -7,20 +7,25 @@ import { MainComponent } from './main/main.component';
 import { AddComponent } from './add/add.component';
 import { DataComponent } from './data/data.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatTabsModule} from '@angular/material/tabs';
+import { FormsModule } from "@angular/forms"
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainComponent,
-    AddComponent,
-    DataComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
-  ],
-  providers: [],
-  bootstrap: [MainComponent]
+    declarations: [
+        AppComponent,
+        MainComponent,
+        DataComponent
+    ],
+    providers: [],
+    bootstrap: [MainComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatTabsModule,
+        AddComponent,
+        FormsModule,
+        HttpClientModule
+    ]
 })
 export class AppModule { }

@@ -1,2 +1,11 @@
-<a [routerLink]="'add'">add</a>
-<a [routerLink]="'data'">data</a>
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+  <mat-tab label="Home">home page</mat-tab>
+  <a [routerLink]="['/data']">
+    <mat-tab label="Add person">
+      <app-add />
+    </mat-tab>
+  </a>
+  <mat-tab label="All data">
+    <app-data />
+  </mat-tab>
+</mat-tab-group>

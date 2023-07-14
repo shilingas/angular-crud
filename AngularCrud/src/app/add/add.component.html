@@ -1,1 +1,12 @@
-<p>add works!</p>
+<div class="container">
+  <form class="example-form" #myForm="ngForm" (ngSubmit)="addPerson(myForm)">
+    <mat-form-field class="example-full-width">
+      <textarea [(ngModel)]="name" name="name" matInput placeholder="Name"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea [(ngModel)]="email" name="email" matInput placeholder="Email"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Add</button>
+  </form>
+</div>
