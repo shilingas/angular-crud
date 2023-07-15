@@ -19,13 +19,15 @@ import { main } from '@popperjs/core';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import {MatCardModule} from '@angular/material/card';
+import { DetailsComponent } from './details/details.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     DataComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    DetailsComponent
   ],
   providers: [],
   bootstrap: [MainComponent],

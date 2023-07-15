@@ -5,6 +5,7 @@ import { DataComponent } from './data/data.component';
 import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
+import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
   {
@@ -14,11 +15,14 @@ const routes: Routes = [
     path: 'data', component: DataComponent
   },
   {
+    path: 'details/:id', component: DetailsComponent
+  },
+  {
     path: 'home', component: HomeComponent
   },
   {
     path: '**', component: ErrorComponent
-  }
+  },
 ];
 
 @NgModule({

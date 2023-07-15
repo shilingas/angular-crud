@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from '../data.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-data',
@@ -15,9 +16,10 @@ export class DataComponent {
   apiData!: Person[];
   newArray!: Person[];
   keys!: string[]
-  constructor(private service: DataService, private http: HttpClient) {
+  constructor(private service: DataService, private http: HttpClient, private router: Router) {
     this.service = service;
     this.http = http;
+    this.router = router;
   }
   ngOnInit(): void {
     console.log('test');
@@ -45,5 +47,8 @@ export class DataComponent {
 
       })
     })
+  }
+  details(i: number): void {
+    
   }
 }
