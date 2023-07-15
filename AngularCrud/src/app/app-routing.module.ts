@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddComponent } from './add/add.component';
 import { DataComponent } from './data/data.component';
+import { MainComponent } from './main/main.component';
+import { HomeComponent } from './home/home.component';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   {
@@ -9,6 +12,12 @@ const routes: Routes = [
   },
   {
     path: 'data', component: DataComponent
+  },
+  {
+    path: 'home', component: HomeComponent
+  },
+  {
+    path: '**', component: ErrorComponent
   }
 ];
 

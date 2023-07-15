@@ -16,6 +16,7 @@ export class DataComponent {
     this.http = http;
   }
   ngOnInit(): void {
+    console.log('test');
     this.currentData = this.service.getData();
     this.http.get<Person[]>(`https://angular-crud-e84e3-default-rtdb.firebaseio.com/users.json`).subscribe(x => {
       this.apiData = x;
