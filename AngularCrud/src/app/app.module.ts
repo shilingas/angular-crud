@@ -18,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { main } from '@popperjs/core';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { ErrorComponent } from './error/error.component';
     MatMenuModule,
     MatSidenavModule,
     MatToolbarModule,
-    NgbModule
+    NgbModule,
+    MatCardModule
   ]
 })
 export class AppModule { }
