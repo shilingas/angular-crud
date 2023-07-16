@@ -20,20 +20,21 @@ import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import {MatCardModule} from '@angular/material/card';
 import { DetailsComponent } from './details/details.component';
+import { UpdateComponent } from './update/update.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    DataComponent,
     HomeComponent,
     ErrorComponent,
-    DetailsComponent
+    DetailsComponent,
   ],
   providers: [],
   bootstrap: [MainComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    DataComponent,
     BrowserAnimationsModule,
     MatTabsModule,
     AddComponent,
@@ -43,7 +44,8 @@ import { DetailsComponent } from './details/details.component';
     MatSidenavModule,
     MatToolbarModule,
     NgbModule,
-    MatCardModule
+    MatCardModule,
+    UpdateComponent
   ]
 })
 export class AppModule { }

@@ -1,9 +1,14 @@
 .example-card {
-  width: 50%;
+  width: 65%;
   margin-bottom: 10%;
 }
 .main-container {
   display: grid;
   gap: 1px;
   grid-template-columns: repeat(3, 1fr);
+}
+.buttons{
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly; 
 }

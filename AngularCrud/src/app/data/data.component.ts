@@ -2,12 +2,17 @@ import { Component } from '@angular/core';
 import { DataService } from '../data.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
-
+import { Router, RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatCard, MatCardModule } from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-data',
   templateUrl: './data.component.html',
-  styleUrls: ['./data.component.scss']
+  styleUrls: ['./data.component.scss'],
+  standalone: true,
+  imports: [MatButtonModule, MatInputModule, MatCardModule, CommonModule, RouterModule]
 })
 export class DataComponent {
   currentData: Person[] = [];
@@ -16,6 +21,7 @@ export class DataComponent {
   apiData!: Person[];
   newArray!: Person[];
   keys!: string[]
+  currentPerson!: Person;
   constructor(private service: DataService, private http: HttpClient, private router: Router) {
     this.service = service;
     this.http = http;
@@ -48,7 +54,9 @@ export class DataComponent {
       })
     })
   }
-  details(i: number): void {
-    
+  update(id: number): void {
+    this.http.get<Person>(`https://angular-crud-e84e3-default-rtdb.firebaseio.com/users/${this.keys[id]}.json`).subscribe(x => {
+      this.currentPerson = x;
+    });
   }
 }

@@ -6,6 +6,7 @@ import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { DetailsComponent } from './details/details.component';
+import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,9 @@ const routes: Routes = [
     path: 'data', component: DataComponent
   },
   {
+    path: 'update/:id', component: UpdateComponent
+  },
+  {
     path: 'details/:id', component: DetailsComponent
   },
   {
@@ -22,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: '**', component: ErrorComponent
-  },
+  }
 ];
 
 @NgModule({

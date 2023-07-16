@@ -9,8 +9,7 @@ export class DataService {
   addPerson(person: Person) {
     this.data.push(person);
   }
-  getData() : Person[]
-  {
+  getData(): Person[] {
     return this.data;
   }
 

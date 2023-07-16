@@ -1,22 +1,22 @@
 <div class="container">
-  <form class="example-form" #myForm="ngForm" (ngSubmit)="addPerson(myForm)">
+  <form class="example-form" #myForm="ngForm">
     <mat-form-field class="example-full-width">
       <textarea
-        [(ngModel)]="name"
         name="name"
         matInput
         placeholder="Name"
+        [(ngModel)]="this.currentPerson.name"
       ></textarea>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <textarea
-        [(ngModel)]="email"
         name="email"
         matInput
         placeholder="Email"
+        [(ngModel)]="this.currentPerson.email"
       ></textarea>
     </mat-form-field>
-    <button mat-raised-button color="primary">Add</button>
+    <button (click)="update(myForm)" mat-raised-button color="primary">Update</button>
   </form>
 </div>

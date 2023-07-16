@@ -10,9 +10,20 @@
         <mat-card-title>Email: </mat-card-title>
         <mat-card-subtitle>{{ item.email }}</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+      <mat-card-actions class="buttons">
+        <button
+          [routerLink]="['/details', this.keys[i]]"
+          mat-raised-button
+          color="primary"
+        >
+          Details
+        </button>
+        <button (click)="removeItem(i)" mat-raised-button color="primary">
+          Remove
+        </button>
+        <button [routerLink]="['/update', this.keys[i]]" mat-raised-button color="primary">
+          Update
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>
