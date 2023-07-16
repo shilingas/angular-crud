@@ -1,9 +1,9 @@
 .example-card {
-    width: 50%;
-    margin-bottom: 10%;
+  width: 50%;
+  margin-bottom: 10%;
 }
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.main-container {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, 1fr);
 }
