@@ -10,6 +10,8 @@ import { Observable, map } from 'rxjs';
 })
 export class DetailsComponent {
   id$!: Observable<number>
+  id!: string;
+  currentPerson!: Person;
   constructor(private route: ActivatedRoute, private http: HttpClient) {
     this.route = route;
   }
@@ -17,6 +19,11 @@ export class DetailsComponent {
    this.id$ =this.route.params.pipe(
       map(x => x['id'])
     )
-    this.http.get<Person>(`https://angular-crud-e84e3-default-rtdb.firebaseio.com/users.json/${this.id$}`).subscribe(x => console.log(x));
+    this.route.params.subscribe(x => {
+      this.id = x['id'];
+    })
+    this.http.get<Person>(`https://angular-crud-e84e3-default-rtdb.firebaseio.com/users/${this.id}.json`).subscribe(x => {
+      this.currentPerson = x;
+    });
   }
 }
