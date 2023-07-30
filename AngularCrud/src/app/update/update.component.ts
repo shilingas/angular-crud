@@ -5,7 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-update',
@@ -18,7 +18,7 @@ export class UpdateComponent {
   test: string = "labas"
   id!: string;
   currentPerson!: Person;
-  constructor(private route: ActivatedRoute, private http: HttpClient) {
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) {
     this.route = route;
   }
   ngOnInit() {

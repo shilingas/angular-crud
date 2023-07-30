@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
 import { DetailsComponent } from './details/details.component';
 import { UpdateComponent } from './update/update.component';
+import { CartComponent } from './cart/cart.component';
+import { ShopComponent } from './shop/shop.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,12 @@ const routes: Routes = [
   },
   {
     path: 'home', component: HomeComponent
+  },
+  {
+    path: 'shop', component: ShopComponent
+  }
+  {
+    path: 'cart', component: CartComponent
   },
   {
     path: '**', component: ErrorComponent

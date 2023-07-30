@@ -21,6 +21,8 @@ import { ErrorComponent } from './error/error.component';
 import {MatCardModule} from '@angular/material/card';
 import { DetailsComponent } from './details/details.component';
 import { UpdateComponent } from './update/update.component';
+import { CartComponent } from './cart/cart.component';
+import { ShopComponent } from './shop/shop.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,8 @@ import { UpdateComponent } from './update/update.component';
     HomeComponent,
     ErrorComponent,
     DetailsComponent,
+    CartComponent,
+    ShopComponent,
   ],
   providers: [],
   bootstrap: [MainComponent],
