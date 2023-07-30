@@ -1,0 +1,25 @@
+<form class="example-form" [formGroup]="formGroup" (ngSubmit)="handleProduct(formGroup)">
+    <mat-form-field class="example-full-width">
+      <textarea
+      formControlName="title"
+        matInput
+        placeholder="Name"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <textarea
+      formControlName="description"
+        matInput
+        placeholder="Description"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <textarea
+        formControlName="price"
+          matInput
+          placeholder="Price"
+        ></textarea>
+      </mat-form-field>
+    <button mat-raised-button color="primary">Add</button>
+  </form>

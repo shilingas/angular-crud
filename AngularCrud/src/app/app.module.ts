@@ -23,6 +23,7 @@ import { DetailsComponent } from './details/details.component';
 import { UpdateComponent } from './update/update.component';
 import { CartComponent } from './cart/cart.component';
 import { ShopComponent } from './shop/shop.component';
+import { AddProductComponent } from './add-product/add-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,8 @@ import { ShopComponent } from './shop/shop.component';
     MatToolbarModule,
     NgbModule,
     MatCardModule,
-    UpdateComponent
+    UpdateComponent,
+    AddProductComponent
   ]
 })
 export class AppModule { }
