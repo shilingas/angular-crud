@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ProductService } from '../product.service';
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
@@ -11,9 +12,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   imports: [MatInputModule, MatFormFieldModule, FormsModule, ReactiveFormsModule]
 })
 export class AddProductComponent {
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private productService: ProductService) {
     this.fb = fb;
+    this.productService = productService;
   }
+  currentProduct!: Product;
   formGroup!: FormGroup;
   ngOnInit() {
     this.formGroup = this.fb.group({
@@ -23,6 +26,12 @@ export class AddProductComponent {
     })
   }
   handleProduct(form: FormGroup) {
-    console.log(form.value);
+    this.currentProduct = {
+      ...this.currentProduct,
+      title: form.value.title,
+      description: form.value.description,
+      price: form.value.price
+    }
+    this.productService.addingProduct(this.currentProduct);
   }
 }

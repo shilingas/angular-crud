@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-shop',
@@ -6,10 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent {
+  products!: Product[];
+  constructor(private productService: ProductService)
+  {
+    this.productService = productService;
+  }
   tempProduct: Product = {
     title: 'test',
     price: 10,
     description: 'abcd',
   }
-  products!: Product[];
+  ngOnInit() {
+    this.products = this.productService.getProducts();
+  }
 }
