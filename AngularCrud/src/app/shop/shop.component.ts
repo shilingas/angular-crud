@@ -12,11 +12,7 @@ export class ShopComponent {
   {
     this.productService = productService;
   }
-  tempProduct: Product = {
-    title: 'test',
-    price: 10,
-    description: 'abcd',
-  }
+
   ngOnInit() {
     this.products = this.productService.getProducts();
   }

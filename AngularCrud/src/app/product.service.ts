@@ -5,7 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class ProductService {
   products!: Product[];
-  constructor() { }
+  constructor() { 
+    this.products = [];
+  }
   addingProduct(product: Product) : void {
     console.log(product);
     this.products.push(product)
