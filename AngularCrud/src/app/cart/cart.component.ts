@@ -21,4 +21,9 @@ export class CartComponent {
     this.itemCount = this.cartService.getCartItems().length;
     this.cart = this.cartService.getCartItems();
   }
+  clear(): void {
+    this.cart = [];
+    this.itemCount = 0;
+    this.totalPrice = 0;
+  }
 }
